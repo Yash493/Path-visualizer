@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	background-color: #eaecff !important;
+}
+
+.board {
+	width: 40vw;
+	height: 40vw;
+	border-radius: 10px;
+	background-color: #ffffff;
+	background: linear-gradient(145deg, #eaecff, #e5e5fe);
+	box-shadow: 5px 5px 50px #b0b0f0, -25px -25px 50px #ffffff;
+	border: 1px solid #9a9aea;
+	overflow: hidden;
+}
+
+.unit {
+	background-color: #ffffff;
+	border: 0.1px outset rgb(175, 216, 248);
+	border-radius: 1px;
+}
+.unit:hover {
+	transform: scale(1.1);
+	transition: 200ms;
+}
+
+.restore {
+	background: #ffffff;
+}
+
+.target {
+	/* background: #26262696; */
+	background-color: black;
+	border-radius: 70%;
+	border: 0.1px outset rgb(175, 216, 248);
+	height: 50%;
+	/* background: url("assests/images/Stickman.png"); */
+}
+
+.wall {
+	/* background: #016efd; */
+	background: rgba(209, 67, 57, 0.631);
+}
+
+.screen {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.animate {
+	animation: appear 1s;
+	background-color: #f4fd9e;
+}
+
+@keyframes appear {
+	0% {
+		opacity: 0.5;
+		transform: scale(0);
+		border-radius: 50%;
+	}
+	30% {
+		opacity: 0.75;
+		background-color: #ffeb35;
+	}
+	100% {
+		opacity: 1;
+		background-color: #00ff95;
+		transform: scale(1);
+		border-radius: 0px;
+	}
+}
+
+#clear {
+	border: 1px solid black;
+}
+#clear:hover {
+	background-color: rgb(26, 188, 156);
+	color: white;
+	border: none;
+}
+#start {
+	background-color: rgb(26, 188, 156);
+	color: white;
+}
+#start:hover {
+	background-color: rgb(72, 160, 143);
+	color: white;
+}
+#wall {
+	background-color: rgb(26, 188, 156);
+	color: white;
+}
+#wall:hover {
+	background-color: rgb(72, 160, 143);
+	color: white;
+}
+
+#select {
+	font-weight: bolder;
+	letter-spacing: 1px;
+	border: none;
+	outline: 0;
+}
+#option {
+	font-weight: bolder;
+	letter-spacing: 1px;
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: 0;
+}
+
+.path {
+	background: rgb(255, 254, 106);
+}
+
+.control {
+	width: 40vw;
+	height: 40vw;
+	border-radius: 10px;
+	background: #e5e5ff;
+	box-shadow: 5px 5px 50px #b0b0f0, -25px -25px 50px #ffffff;
+	border: 1px solid #9a9aea;
+}
+
+.footer {
+	color: #ffffff;
+}
+
+.screen {
+	width: 38vw;
+	height: 38vw;
+	border-radius: 10px;
+}
+
+.title {
+	border-radius: 20px;
+	background: linear-gradient(145deg, #cacaca, #f0f0f0);
+	box-shadow: 11px 11px 27px #c5c5c5, -11px -11px 27px #fbfbfb;
+}
+
+.card {
+	opacity: 0.75;
+}
+.card:hover {
+	box-shadow: 5px 5px 20px #3b3b3b;
+	opacity: 1;
+	transition: 300ms;
+}
+
+.fa:hover {
+	transform: rotate(360deg);
+	transition: 1s;
+}
+
+@media screen and (max-width: 992px) {
+	.board,
+	.control {
+		width: 75vw;
+		height: 75vw;
+	}
+
+	.screen {
+		width: 70vw;
+		height: 70vw;
+	}
+}
+@media screen and (max-width: 520px) {
+	.control {
+		border-radius: 0px;
+		background: none;
+		box-shadow: none;
+	}
+	@media screen and (max-width: 340px) {
+		.card-grp {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.card-grp {
+		margin-top: 30px;
+	}
+	.icon {
+		margin-top: 100px;
+	}
+}
+.visited {
+	animation-name: visitedAnimation;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-out;
+	animation-direction: alternate;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(175, 216, 248);
+	border-image: initial;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+	cursor: pointer;
+	background-color: rgb(26, 188, 156);
+}
+input[type="range"]::-webkit-slider-thumb {
+	box-shadow: 1px 1px 1px #000000;
+	border: 1px solid #000000;
+	height: 15px;
+	width: 15px;
+	border-radius: 5px;
+	background: #ffffff;
+	cursor: pointer;
+	-webkit-appearance: none;
+	margin-top: -3px;
+}
+.card-body {
+	height: 320px;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 2rem;
+	justify-content: space-between;
+	border-radius: 20px;
+}
+
+.card-body p {
+	padding-bottom: 1rem;
+}
+.container .card {
+	display: flex;
+	align-items: center;
+}
+.card img {
+	height: 200px;
+}
+.col-md-6 {
+	border-radius: 20rem;
+}
+.text-light {
+	padding: 13px 10px;
+	margin-bottom: 0%;
+}
